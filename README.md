@@ -24,7 +24,7 @@ integrate-github-and-notion는 github과 notion의 연동을 위해 만들어졌
   - `https://developers.notion.com` 상단의 `My integrations` 에서 찾을 수 있습니다
 - NOTION_TARGET_DATABASE_ID
   - notion의 페이지를 생성할 database id
-  - 웹으로 접근해 url을 확인하세요. `https://www.notion.so/{database id}?v=...`에서 `database id`를 사용하세요
+  - 웹으로 접근해 url을 확인하세요. `https://www.notion.so/{database id}?v=...`에서 `database id`를 입력하세요
 
 ### 예시
 
@@ -32,9 +32,22 @@ integrate-github-and-notion는 github과 notion의 연동을 위해 만들어졌
 GITHUB_AUTH = "abcde.."
 GITHUB_TARGET_OWNER = "superCoolUser"
 GITHUB_TARGET_REPO = "repo-super-awesome"
-NOTION_INTEGRATION_AUTH = "secret_abcde..."
-NOTION_TARGET_DATABASE_ID = "abcde..."
+NOTION_INTEGRATION_AUTH="secret_abcde..."
+NOTION_TARGET_DATABASE_ID="abcde..."
 ```
+
+## Github Webhook 설정
+
+Github repo의 변경 사항을 가져오기 위해 Webhook을 사용합니다.
+
+커밋을 반영하고 싶은 repo에 들어가 `Setting > Webhooks > Add Webhook`을 누르세요.
+
+- Payload URL
+  - `https://{Server url}/github/webhooks`를 입력해주세요. `Server url`은 만든 서버의 url을 넣으세요.
+- Content Type
+  - `application/json`으로 변경하세요.
+
+그 후, `Add webhook`을 눌러주세요.
 
 ## Notion Database 설정
 
@@ -46,3 +59,5 @@ Table Database를 이용합니다.
 ```
 
 다음과 같이 만들어주세요. **`이름`과 `sha`, `createdAt`은 필수입니다.** 나머지는 마음대로 만들어도 상관 없습니다.
+
+모두 끝내셨다면, 축하합니다. 이제 github의 commit 정보가 Notion Database에 표시될 겁니다.
