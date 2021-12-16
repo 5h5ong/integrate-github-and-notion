@@ -1,0 +1,21 @@
+{
+  "name": "github-and-notion-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon --files src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "call5h5ong@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0"
+  },
+  "dependencies": {
+    "@notionhq/client": "^0.4.10",
+    "dotenv": "^10.0.0",
+    "octokit": "^1.7.1"
+  }
+}
