@@ -10,7 +10,7 @@ const notion = new Client({
  */
 export const notionGetPagesTitles = async () => {
   const { results } = await notion.databases.query({
-    database_id: process.env.NOTION_TARGET_DATABASE_ID,
+    database_id: process.env.NOTION_TARGET_DATABASE_ID!,
   });
 
   const titles = results.map<NotionType>(({ properties }) => {
@@ -48,7 +48,7 @@ export const notionCreatePageWithCommit = async (
   try {
     const response = await notion.pages.create({
       parent: {
-        database_id: process.env.NOTION_TARGET_DATABASE_ID,
+        database_id: process.env.NOTION_TARGET_DATABASE_ID!,
       },
       properties: {
         이름: {
