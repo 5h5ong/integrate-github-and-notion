@@ -48,7 +48,7 @@ export const notionCreatePageWithCommit = async (
   try {
     const response = await notion.pages.create({
       parent: {
-        database_id: process.env.NOTION_DATABASE_ID,
+        database_id: process.env.NOTION_TARGET_DATABASE_ID,
       },
       properties: {
         이름: {
@@ -64,6 +64,9 @@ export const notionCreatePageWithCommit = async (
               text: { content: commit.sha },
             },
           ],
+        },
+        createdAt: {
+          date: { start: commit.createdAt },
         },
       },
     });
