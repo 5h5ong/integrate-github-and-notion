@@ -12,12 +12,14 @@ integrate-github-and-notion는 github과 notion의 연동을 위해 만들어졌
 
 **환경 변수로 필요한 값들을 받습니다. 모두 입력해야 합니다.**
 
-- GITHUB_AUTH
+`Deparecated`된 변수들은 현재 사용되지 않습니다. 넣어도 되고, 안 넣어도 됩니다.
+
+- GITHUB_AUTH (Deprecated)
   - github의 personal access token
   - `Setting > Developer settings > Personal access tokens` 에서 찾을 수 있습니다
-- GITHUB_TARGET_OWNER
+- GITHUB_TARGET_OWNER (Deprecated)
   - github repo의 소유자 이름
-- GITHUB_TARGET_REPO
+- GITHUB_TARGET_REPO (Deprecated)
   - github repo의 이름
 - NOTION_INTEGRATION_AUTH
   - notion의 integration token
@@ -29,9 +31,9 @@ integrate-github-and-notion는 github과 notion의 연동을 위해 만들어졌
 ### 예시
 
 ```dosini
-GITHUB_AUTH = "abcde.."
-GITHUB_TARGET_OWNER = "superCoolUser"
-GITHUB_TARGET_REPO = "repo-super-awesome"
+# GITHUB_AUTH = "abcde.."
+# GITHUB_TARGET_OWNER = "superCoolUser"
+# GITHUB_TARGET_REPO = "repo-super-awesome"
 NOTION_INTEGRATION_AUTH="secret_abcde..."
 NOTION_TARGET_DATABASE_ID="abcde..."
 ```
@@ -60,4 +62,8 @@ Table Database를 이용합니다.
 
 다음과 같이 만들어주세요. **`이름`과 `sha`, `createdAt`은 필수입니다.** 나머지는 마음대로 만들어도 상관 없습니다.
 
-모두 끝내셨다면, 축하합니다. 이제 github의 commit 정보가 Notion Database에 표시될 겁니다.
+- 이름 : Title
+- sha : Text
+- createdAt : Date
+
+`Property Type`을 반드시 위와 같이 맞춰주세요. **다르면 페이지가 생성되지 않습니다.**
