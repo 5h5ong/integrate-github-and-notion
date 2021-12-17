@@ -73,6 +73,7 @@ export const notionCreatePageWithCommit = async (
     console.log(response);
     return true;
   } catch (error) {
+    console.log(`[error] Create Notion Page\n${error}`);
     return false;
   }
 };

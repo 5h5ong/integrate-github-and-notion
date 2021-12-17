@@ -25,7 +25,7 @@ if (NOTION_INTEGRATION_AUTH && NOTION_TARGET_DATABASE_ID) {
     const commits = req.body.commits;
 
     if (commits) {
-      console.log(commits);
+      console.log(`[info] git commits\n${commits}`);
       for (const { id, message, timestamp } of commits) {
         await notionCreatePageWithCommit({
           sha: id,
